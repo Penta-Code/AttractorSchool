@@ -7,7 +7,7 @@
 
 namespace HomeWork17
 {
-    internal class TV
+    public class TV
     {
         public int CurrentChannel { get; set; }
         public string[] ChannelLimit { get; } = ["Channel 0", "Channel 1", "Channel 2", "Channel 3", "Channel 4"];
