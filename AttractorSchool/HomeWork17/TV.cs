@@ -5,12 +5,14 @@
 //using System.Threading.Channels;
 //using System.Threading.Tasks;
 
+using System.Reflection.Metadata.Ecma335;
+
 namespace HomeWork17
 {
     public class TV
     {
-        public int CurrentChannel { get; set; }
-        public string[] ChannelLimit { get; } = ["Channel 0", "Channel 1", "Channel 2", "Channel 3", "Channel 4"];
+        public int CurrentChannel { get; private set; }
+        private string[] ChannelLimit { get; } = ["Channel 0", "Channel 1", "Channel 2", "Channel 3", "Channel 4"];
         
         public TV(int currentChannel, string[] channelLimit)
         {
@@ -94,5 +96,7 @@ namespace HomeWork17
             Console.WriteLine("\nShutting down...");
             System.Threading.Thread.Sleep(1500);
         }
+
+        public string this[int index] => (index >= 0) && (index <= ChannelLimit.Length -1) ? ChannelLimit[index] : $"Channel number must be between 0 and {ChannelLimit.Length - 1}";
     }
 }

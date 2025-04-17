@@ -36,7 +36,9 @@
                     Console.ForegroundColor = ConsoleColor.Red;
                     Console.WriteLine("Unknown command");
                     Console.ForegroundColor = ConsoleColor.Blue;
-                    Console.WriteLine($"Press + or - to switch channels or input channel number");
+                    Console.WriteLine($"Press + or - to switch channels or input channel number\nInput Q or q to shut down the TV");
+                    Console.ForegroundColor = ConsoleColor.White;
+                    Console.WriteLine($"Current channel: {tv[tv.CurrentChannel]}");
                 }
             }
         }
