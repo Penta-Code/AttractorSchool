@@ -1,22 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
-using static System.Runtime.InteropServices.JavaScript.JSType;
-
-namespace LabWork
+﻿namespace LabWork
 {
     internal class Hand
     {
-        public Card[] MyHand { get; private set; } //set validation
+        public Card[] MyHand { get; private set; }
         public Hand()
         {
             MyHand = new Card[5];
         }
 
-        public void PopulateHand(Card[] card)
+        public void FillHand(Card[] card)
         {
             MyHand = card;
         }
@@ -28,7 +20,7 @@ namespace LabWork
 
         public override string ToString()
         {
-            return $"|  1   |  2   |  3   |  4   |  5   |\n|  {MyHand[0].ToString()}  |  {MyHand[1].ToString()}  |  {MyHand[2].ToString()}  |  {MyHand[3].ToString()}  |  {MyHand[4].ToString()}  |";
+            return $"|  1   |  2   |  3   |  4   |  5   |\n|  {MyHand[0].ToString()}  |  {MyHand[1].ToString()}  |  {MyHand[2].ToString()}  |  {MyHand[3].ToString()}  |  {MyHand[4].ToString()}  |\n";
         }
     }
 }

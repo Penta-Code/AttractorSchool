@@ -1,14 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace LabWork
+﻿namespace LabWork
 {
     internal class Deck
     {
-        private static string[] _ranks = { "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K", "A" }; //Length = 13
+        private static string[] _ranks = { "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K", "A" };
         private static string[] _suits = { "\u2660", "\u2665", "\u2666", "\u2663" };
 
         public Card[] MyDeck { get; private set; }
@@ -59,11 +53,16 @@ namespace LabWork
             return card;
         }
 
-
-
-        public override string ToString()
+        public Card[] GetFullHand()
         {
-            return $"{MyDeck.Length}";
+            Card[] cards = new Card[5];
+
+            for (int i = 0; i < cards.Length; i++)
+            {
+                cards[i] = GetCard();
+            }
+
+            return cards;
         }
     }
 }
