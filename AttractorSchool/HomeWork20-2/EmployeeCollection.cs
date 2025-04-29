@@ -1,49 +1,66 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using static System.Net.Mime.MediaTypeNames;
-
-namespace HomeWork20_2
+﻿namespace HomeWork20_2
 {
     internal class EmployeeCollection
     {
-        public string[] EmployeesList { get; set; }
+        public Employee[] Employees { get; set; }
 
-        //public Employee[] Employees { get; set; }
+        public EmployeeCollection(string path)
+        {
+            FillEmployeesList(path);
+        }
 
         public void PrintUsers()
         {
-            Console.WriteLine("Номер  | ФИО  | Должность  | Год  ");
-            Console.WriteLine("-------|------|------------|------");
-            //foreach (var emp in Employees)
+            if (Employees.Length < 1)
             {
-                //Console.WriteLine($"{emp.Number}  | {emp.Name}  | {emp.Profession}  | {emp.Year}  ");
+                Console.WriteLine($"Файл со списком сотрудников пуст или произошла ошибка при считывании сотрудников из файла!");
+                throw new NullReferenceException();
+            }
+
+            Console.WriteLine("\nСписок сотрудников:\nНомер | ФИО     | Должность  | Год  \n------|---------|------------|------");
+            foreach (var emp in Employees)
+            {
+                Console.WriteLine($"{emp.Number}     | {emp.FirstName}  | {emp.LastName}   | {emp.Profession}   | {emp.Year}");
             }
         }
 
-        public void CreateUsers(string[] list)
+        public void FillEmployeesList(string path)
         {
-            for (int i = 0; i <= list.Length; i++)
+            try
             {
-                string[] props = list[i].Split(' ');
+                string[] readUsers = FileReader.GetEmployess(path);
+                Employees = new Employee[readUsers.Length];
 
-                //Employees[i] = Employee (num)
+                for (int i = 0; i < readUsers.Length; i++)
+                {
+                    string[] props = readUsers[i].Split(' ');
+                    Employees[i] = new Employee(props[0], props[1], props[2], props[3], props[4]);
+                }
+            }
+            catch (FileNotFoundException)
+            {
+                Console.WriteLine($"Критическая ошибка:\nНе удалось найти файл по указаному пути: {path}");
+                throw new FileNotFoundException();
             }
         }
 
-        public void Filter(string text)
+        public string[] Filter(string profession)
         {
-            Console.WriteLine("Номер  | ФИО  | Должность  | Год  ");
-            Console.WriteLine("-------|------|------------|------");
-            //sforeach (var emp in Employees)
+            string[] filteredEmployees = new string[0];
+
+            Console.WriteLine("\nРезультат:\n");
+            Console.WriteLine("Номер | ФИО     | Должность  | Год  ");
+            Console.WriteLine("------|---------|------------|------");
+            for (int i = 0; i < Employees.Length; i++)
             {
-                //if (emp.Profession == text)
-                //{
-                //    Console.WriteLine($"{emp.Number}  | {emp.Name}  | {emp.Profession}  | {emp.Year}  ");
-                //}
+                if (Employees[i].Profession == profession)
+                {
+                    Console.WriteLine($"{Employees[i].Number}     | {Employees[i].FirstName} {Employees[i].LastName}   | {  Employees[i].Profession}   | {Employees[i].Year}");
+                    Array.Resize(ref filteredEmployees, filteredEmployees.Length + 1);
+                    filteredEmployees[filteredEmployees.Length - 1] = new string($"{Employees[i].Number} {Employees[i].FirstName} {Employees[i].LastName} {Employees[i].Profession} {Employees[i].Year}");
+                }
             }
+            return filteredEmployees;
         }
     }
 }

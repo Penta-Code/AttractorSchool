@@ -6,20 +6,17 @@ namespace HomeWork20_2
     {
         static void Main(string[] args)
         {
-            Console.OutputEncoding = Encoding.UTF8;
+            const string readFilePath = "../../../input.txt";
+            const string writeFilePath = "../../../out.txt";
 
-            EmployeeCollection employees = new();
+            EmployeeCollection employees = new(readFilePath);
+            employees.PrintUsers();
 
-            try
-            {
-                employees.EmployeesList = File.ReadAllLines("../../../input.txt");
-                employees.CreateUsers(employees.EmployeesList);
-                employees.PrintUsers();
-            }
-            catch (FileNotFoundException)
-            {
-                Console.WriteLine($"Файл не найден по указанному пути!");
-            }
+            Console.Write($"\nВведите должность сотрудника: ");
+            string profession = Console.ReadLine();
+
+            var filtered = employees.Filter(profession);
+            FileReader.WriteFilteredEmployess(writeFilePath, filtered);
         }
     }
 }
