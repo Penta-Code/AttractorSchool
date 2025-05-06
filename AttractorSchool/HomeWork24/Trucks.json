@@ -1,0 +1,37 @@
+[
+  {
+    "Id": 1,
+    "Name": "Renault Magnum",
+    "Driver": {
+      "Name": "John",
+      "Surname": "Dou",
+      "Age": 35,
+      "Experience": 10
+    },
+    "State": "base"
+  },
+
+  {
+    "Id": 2,
+    "Name": "Volvo FH12",
+    "Driver": {
+      "Name": "Jack",
+      "Surname": "Dou",
+      "Age": 55,
+      "Experience": 30
+    },
+    "State": "base"
+  },
+
+  {
+    "Id": 3,
+    "Name": "DAF XF",
+    "Driver": {
+      "Name": "Jane",
+      "Surname": "Dou",
+      "Age": 45,
+      "Experience": 15
+    },
+    "state": "base"
+  }
+]
