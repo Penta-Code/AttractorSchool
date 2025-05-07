@@ -14,10 +14,9 @@ namespace LabWork3
 
         public ILaptopState State { get; set; }
 
-        public Laptop(bool isOn, string runningProgramm, ILaptopState state)
+        public Laptop(bool isOn, ILaptopState state)
         {
             IsOn = isOn;
-            RunningProgramm = runningProgramm;
             State = state;
         }
 
