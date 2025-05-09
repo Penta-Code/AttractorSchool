@@ -10,7 +10,6 @@
     },
     "State": "base"
   },
-
   {
     "Id": 2,
     "Name": "Volvo FH12",
@@ -22,7 +21,6 @@
     },
     "State": "base"
   },
-
   {
     "Id": 3,
     "Name": "DAF XF",
@@ -32,6 +30,6 @@
       "Age": 45,
       "Experience": 15
     },
-    "state": "base"
+    "State": "base"
   }
 ]

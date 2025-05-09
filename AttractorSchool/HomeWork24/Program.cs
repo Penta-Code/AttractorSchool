@@ -1,4 +1,6 @@
-﻿namespace HomeWork24
+﻿using HomeWork24.Helpers;
+
+namespace HomeWork24
 {
     internal class Program
     {
@@ -6,8 +8,20 @@
         {
             string readPath = AskFilePath.ReadPath();
             string writePath = AskFilePath.WritePath();
+            Truck[] trucks = GetTrucks.TrucksList(readPath);
+            Console.Clear();
 
-            AppMenu.Start();
+            try
+            {
+                while (true)
+                {
+                    AppMenu.Start(readPath, writePath, trucks);
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
         }
     }
 }

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace HomeWork24
+namespace HomeWork24.Helpers
 {
     internal static class AskFilePath
     {
