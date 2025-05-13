@@ -29,6 +29,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LabWork3", "LabWork3\LabWor
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HomeWork24", "HomeWork24\HomeWork24.csproj", "{05A8968D-4FB2-4288-AD6D-EDC01C695BF6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HW24Refactor", "HW24Refactor\HW24Refactor.csproj", "{23ECFBF7-4789-42F3-ACB1-1FDAD93B49A3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Exam3", "Exam3\Exam3.csproj", "{93C4A43C-42B7-4FC2-BAA6-BB1A7E41431B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -87,6 +91,14 @@ Global
 		{05A8968D-4FB2-4288-AD6D-EDC01C695BF6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{05A8968D-4FB2-4288-AD6D-EDC01C695BF6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{05A8968D-4FB2-4288-AD6D-EDC01C695BF6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{23ECFBF7-4789-42F3-ACB1-1FDAD93B49A3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{23ECFBF7-4789-42F3-ACB1-1FDAD93B49A3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{23ECFBF7-4789-42F3-ACB1-1FDAD93B49A3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{23ECFBF7-4789-42F3-ACB1-1FDAD93B49A3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{93C4A43C-42B7-4FC2-BAA6-BB1A7E41431B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{93C4A43C-42B7-4FC2-BAA6-BB1A7E41431B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{93C4A43C-42B7-4FC2-BAA6-BB1A7E41431B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{93C4A43C-42B7-4FC2-BAA6-BB1A7E41431B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
